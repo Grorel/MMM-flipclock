@@ -1,0 +1,25 @@
+{
+  "name": "Magic-Mirror-Module-FlipClock",
+  "version": "0.1.0",
+  "description": "A module for displaying clock with FlipClockJs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grorel/MMM-flipclock"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "flipclock",
+    "module"
+  ],
+  "author": "Grorel",
+  "contributors": "git+https://github.com/Grorel/MMM-flipclock/graphs/contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "git+https://github.com/Grorel/MMM-flipclock/issues"
+  },
+  "homepage": "git+https://github.com/Grorel/MMM-flipclock/blob/master/README.md",
+  "dependencies": {
+    
+  }
+}
