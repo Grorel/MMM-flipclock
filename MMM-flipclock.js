@@ -1,4 +1,4 @@
-//MMM-flipclock.js:
+﻿//MMM-flipclock.js:
 
 Module.register("MMM-flipclock",{
 	// Default module config.
