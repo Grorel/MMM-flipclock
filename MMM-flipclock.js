@@ -31,18 +31,17 @@ Module.register("MMM-flipclock",{
 		});
 
 		// Schedule update interval.
-		var self = this;
+		/*var self = this;
 		setInterval(function() {
 			self.updateDom();
-		}, 1000);
+		}, 1000);*/
 
 	},
 	
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.addClass(this.config.className);
-		wrapper.innerHTML = this.config.className;
+		wrapper.classList.add(this.config.className);
 		return wrapper;
 	},
 	
