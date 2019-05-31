@@ -19,7 +19,7 @@ Module.register("MMM-flipclock",{
 		return [
 			this.file('libs/flipclock.css') // this file will be loaded straight from the module folder.
 		]
-	}
+	},
 	
 	
 	// Define start sequence.
