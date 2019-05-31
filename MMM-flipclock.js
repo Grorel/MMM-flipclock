@@ -9,8 +9,8 @@ Module.register("MMM-flipclock",{
 	// Get scripts
 	getScripts: function() {
 		return [
-			this.file('libs/flipclock.min.js'), // this file will be loaded straight from the module folder.
-			this.file('libs/jquery-3.4.1.min.js')
+			this.file('libs/jquery-3.4.1.min.js'),
+			this.file('libs/flipclock.min.js') // this file will be loaded straight from the module folder.	
 		]
 	},
 	
