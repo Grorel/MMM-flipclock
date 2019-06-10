@@ -22,6 +22,21 @@ Module.register("MMM-flipclock",{
 	},
 	
 	
+	// If container object exists in DOM
+	_checkDomCreated: function() {
+		
+		if ($('.' + this.config.className)[0]){
+			// Do something if class exists
+			Log.info("Class found");
+			return true;
+		} else {
+			// Do something if class does not exist
+			Log.info("Class not found : must create");
+			return false;
+		}
+	},
+	
+	
 	// Define start sequence.
 	start: function() {
 		Log.info("Starting module: " + this.name);
@@ -55,20 +70,8 @@ Module.register("MMM-flipclock",{
 		//var wrapper = document.createElement("div");
 		//wrapper.classList.add(this.config.className);
 		//return wrapper;
-	},
-	
-	// If container object exists in DOM
-	_checkDomCreated: function() {
-		
-		if ($('.' + this.config.className)[0]){
-			// Do something if class exists
-			Log.info("Class found");
-			return true;
-		} else {
-			// Do something if class does not exist
-			Log.info("Class not found : must create");
-			return false;
-		}
 	}
+	
+	
 	
 });
