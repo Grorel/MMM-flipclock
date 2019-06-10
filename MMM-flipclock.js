@@ -54,7 +54,7 @@ Module.register("MMM-flipclock",{
 	// Override dom generator.
 	getDom: function() {
 		
-		if (!_checkDomCreated()) {
+		if (!this._checkDomCreated()) {
 			var wrapper = document.createElement("div");
 			wrapper.classList.add(this.config.className);
 			
