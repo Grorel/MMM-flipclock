@@ -36,6 +36,8 @@ Module.register("MMM-flipclock",{
 		}
 	},
 	
+	clockInstance: null,
+	wrapper: null,
 	
 	// Define start sequence.
 	start: function() {
@@ -55,21 +57,37 @@ Module.register("MMM-flipclock",{
 	getDom: function() {
 		
 		if (!this._checkDomCreated()) {
-			var wrapper = document.createElement("div");
-			wrapper.classList.add(this.config.className);
+			this.wrapper = document.createElement("div");
+			this.wrapper.classList.add(this.config.className);
 			
-			var clock = new FlipClock($('.your-clock'), {
+			this.clockInstance = new FlipClock($('.' + this.config.className), {
 				clockFace: 'TwentyFourHourClock'
 			});
 		
-			return wrapper;
+			return this.wrapper;
+			
 		} else {
-			Log.error("Nothing to do FlipClock");
+			Log.error(this.name + " - getDom : Nothing to do");
 		}
 		
 		//var wrapper = document.createElement("div");
 		//wrapper.classList.add(this.config.className);
 		//return wrapper;
+	},
+	
+	notificationReceived: function(notification, payload, sender) {
+		if (sender) {
+			Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+		} else {
+			Log.log(this.name + " received a system notification: " + notification);
+		}
+		
+		
+		if (notification === "MODULE_DOM_CREATED") {
+			Log.info(this.name + " detects MODULE_DOM_CREATED event" );
+			Log.info(this.wrapper);
+		}
+		
 	}
 	
 	
