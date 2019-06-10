@@ -59,15 +59,10 @@ Module.register("MMM-flipclock",{
 		if (!this._checkDomCreated()) {
 			this.wrapper = document.createElement("div");
 			this.wrapper.classList.add(this.config.className);
-			
-			this.clockInstance = new FlipClock($('.' + this.config.className), {
-				clockFace: 'TwentyFourHourClock'
-			});
-		
 			return this.wrapper;
 			
 		} else {
-			Log.error(this.name + " - getDom : Nothing to do");
+			Log.info(this.name + " - getDom : Nothing to do");
 		}
 		
 		//var wrapper = document.createElement("div");
@@ -85,7 +80,13 @@ Module.register("MMM-flipclock",{
 		
 		if (notification === "MODULE_DOM_CREATED") {
 			Log.info(this.name + " detects MODULE_DOM_CREATED event" );
-			Log.info(this.wrapper);
+			
+			// Init FlipClock instance
+			this.clockInstance = new FlipClock($('.' + this.config.className), {
+				clockFace: 'TwentyFourHourClock'
+			});
+			
+			
 		}
 		
 	}
