@@ -18,7 +18,7 @@ Module.register("MMM-flipclock",{
 	getStyles: function() {
 		return [
 			this.file('libs/flipclock.css'), // this file will be loaded straight from the module folder.
-			this.file('MMM-flipclock.css') // this file will be loaded straight from the module folder.
+			"MMM-flipclock.css" // this file will be loaded straight from the module folder.
 		]
 	},
 	
