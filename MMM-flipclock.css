@@ -1,0 +1,8 @@
+
+// Customize wrapper to fit the clock-wrapper
+// Center align
+.flip-clock-wrapper {
+  position: absolute;
+  left: 33%;
+  width: max-content;
+}
