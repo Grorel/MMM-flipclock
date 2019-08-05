@@ -8,19 +8,11 @@ This moodule allow you to have a Flip clock on your smart mirror. It's based on 
 
 `cd ~/MagicMirror/modules`
 
-2. Create de MMM-flipclock folder
-
-`mkdir MMM-flipclock`
-
-3. Go into the new folder
-
-`cd MMM-flipclock/`
-
-4. Clone the MMM-flipclock repo
+2. Clone the MMM-flipclock repo
 
 `git clone https://github.com/Grorel/MMM-flipclock.git`
 
-5. Insert the module in `~/MagicMirror/config/config.js`, with the good position
+3. Insert the module in `~/MagicMirror/config/config.js`, with the good position
 
 ```
 ...
