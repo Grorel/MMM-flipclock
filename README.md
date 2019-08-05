@@ -19,14 +19,14 @@
 
 5. Insert the module in `~/MagicMirror/config/config.js`, with the good position
 
-`
+```
 ...
 {
 	module: "MMM-flipclock",
     position: "upper_third"
 },
 ...
-`
+```
 
 6. Reboot MagicMirror2 and enjoy !
 
