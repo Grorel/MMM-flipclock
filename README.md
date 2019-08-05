@@ -1,5 +1,8 @@
 # MMM-flipclock
 
+This moodule allow you to have a Flip clock on your smart mirror. It's based on [FlipClock JS lib](https://github.com/objectivehtml/FlipClock)
+
+
 ## Installation
 1. Go to modules directory
 
