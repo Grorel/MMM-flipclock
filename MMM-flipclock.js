@@ -59,16 +59,20 @@ Module.register("MMM-flipclock",{
 		
 		if (!this._checkDomCreated()) {
 			this.wrapper = document.createElement("div");
-			this.wrapper.classList.add(this.config.className);
+			
+			// Add custom class for component, depending on COUNTDOWN or CLOCK mode
+			if (this.config.countdown) {
+				this.wrapper.classList.add(this.config.className + '-countdown');
+			} else {
+				this.wrapper.classList.add(this.config.className);
+			}
+			
 			return this.wrapper;
 			
 		} else {
 			Log.info(this.name + " - getDom : Nothing to do");
 		}
 		
-		//var wrapper = document.createElement("div");
-		//wrapper.classList.add(this.config.className);
-		//return wrapper;
 	},
 	
 	notificationReceived: function(notification, payload, sender) {
@@ -82,11 +86,22 @@ Module.register("MMM-flipclock",{
 		if (notification === "MODULE_DOM_CREATED") {
 			Log.info(this.name + " detects MODULE_DOM_CREATED event" );
 			
-			// Init FlipClock instance
-			this.clockInstance = new FlipClock($('.' + this.config.className), {
-				clockFace: 'TwentyFourHourClock'
-			});
+			// Init FlipClock instance 
+			// COUNTDOWN or CLOCK mode, depending on config.countdown param
 			
+			if (this.config.countdown) {
+				Log.log(this.name + " -- COUNTDOWN Mode ");
+				this.clockInstance = $('.' + this.config.className + '-countdown').FlipClock(30,{
+					clockFace: 'MinuteCounter',
+					countdown: true
+				});
+				
+			} else {
+				Log.log(this.name + " -- CLOCK Mode ");
+				this.clockInstance = new FlipClock($('.' + this.config.className), {
+					clockFace: 'TwentyFourHourClock'
+				});
+			}
 			
 		}
 		
